@@ -33,12 +33,13 @@ const yesBtn = document.getElementById('yesBtn');
 const celebration = document.getElementById('celebration');
 const bgMusic = document.getElementById('bgMusic');
 
-// Auto-play music on first interaction
-document.body.addEventListener('click', () => {
-    if (bgMusic.paused) {
-        bgMusic.play().catch(e => console.log('Audio play failed:', e));
-    }
-}, { once: true });
+// Auto-play music on page load
+bgMusic.play().catch(e => {
+    // If autoplay fails, play on first interaction
+    document.body.addEventListener('click', () => {
+        bgMusic.play().catch(err => console.log('Audio play failed:', err));
+    }, { once: true });
+});
 
 noBtn.addEventListener('mouseover', (e) => {
     const container = document.querySelector('.buttons-container');
