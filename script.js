@@ -74,6 +74,34 @@ noBtn.addEventListener('touchstart', (e) => {
 yesBtn.addEventListener('click', () => {
     celebration.classList.remove('hidden');
     
+    // Typing effect
+    const h1 = celebration.querySelector('h1');
+    const p = celebration.querySelector('p');
+    const h1Text = h1.textContent;
+    const pText = p.textContent;
+    
+    h1.textContent = '';
+    p.textContent = '';
+    
+    let i = 0;
+    const typeH1 = setInterval(() => {
+        if (i < h1Text.length) {
+            h1.textContent += h1Text[i];
+            i++;
+        } else {
+            clearInterval(typeH1);
+            let j = 0;
+            const typeP = setInterval(() => {
+                if (j < pText.length) {
+                    p.textContent += pText[j];
+                    j++;
+                } else {
+                    clearInterval(typeP);
+                }
+            }, 50);
+        }
+    }, 80);
+    
     // Create burst of hearts
     for (let i = 0; i < 50; i++) {
         setTimeout(createHeart, i * 50);
