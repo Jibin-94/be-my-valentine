@@ -163,6 +163,17 @@ body {
     animation: celebrationAppear 0.5s ease;
 }
 
+.celebration::before {
+    content: '❤️';
+    position: absolute;
+    font-size: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: heartBurst 1.5s ease-out 2s forwards;
+    z-index: -1;
+}
+
 .celebration.hidden {
     display: none;
 }
@@ -194,6 +205,21 @@ body {
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
+}
+
+@keyframes heartBurst {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(20);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(40);
+        opacity: 0;
+    }
 }
 
 @media (max-width: 768px) {
