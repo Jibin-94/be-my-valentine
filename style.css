@@ -67,7 +67,7 @@ body {
 
 .slideshow-container {
     position: relative;
-    max-width: 600px;
+    max-width: fit-content;
     max-height: 55vh;
     margin: 0 auto 20px;
     border-radius: 20px;
@@ -82,15 +82,14 @@ body {
 
 .slide {
     display: none;
-    width: 100%;
+    width: fit-content;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .slide.active {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide img {
