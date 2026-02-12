@@ -67,8 +67,8 @@ body {
 
 .slideshow-container {
     position: relative;
-    max-width: 90%;
-    max-height: 50vh;
+    max-width: 600px;
+    max-height: 55vh;
     margin: 0 auto 20px;
     border-radius: 20px;
     overflow: hidden;
@@ -90,7 +90,7 @@ body {
 
 .slide img {
     max-width: 100%;
-    max-height: 50vh;
+    max-height: 55vh;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -197,11 +197,12 @@ body {
     }
     
     .slideshow-container {
-        max-height: 40vh;
+        max-width: 90%;
+        max-height: 45vh;
     }
     
     .slide img {
-        max-height: 40vh;
+        max-height: 45vh;
     }
     
     .btn {
